@@ -479,7 +479,9 @@ namespace argparse {
                         entry->error = "No value provided for: " + key;
                     }
                 } else {
+#ifndef ARGPARSE_NO_UNRECOGNIZED_ARGUMENT
                     cerr << "unrecognised commandline argument: " << key << endl;
+#endif
                 }
             };
             auto add_param = [&](size_t &i, const size_t &start) {
